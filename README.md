@@ -3,19 +3,19 @@ Pipelines to quantify and analysed immunofluorescence images
 
 ## 1. Segment and quantify fluorescent images with CellProfiler
 The exact parameters used to segment images for further quantification vary every time. However, I have uploaded a test pipelines for 10x images and quantification of nuclear signal. Adaptive Otsu thresolding worked better in my hands. The following parameters are particularly important:
-    1. Typical diameter of objects, in pixel units (Min, Max) = 12, 30 [small variations can affect nuclei merging/splitting]
-    2. Lower and upper bounds on threshold = 0.003, 1 [ to set the lower bound, enter test mode and use cursor to explore pixel intensities around nuclei.]
+1. Typical diameter of objects, in pixel units (Min, Max) = 12, 30 [small variations can affect nuclei merging/splitting]
+2. Lower and upper bounds on threshold = 0.003, 1 [ to set the lower bound, enter test mode and use cursor to explore pixel intensities around nuclei.]
 
 Tips for accurate quantification across experiments:
-  a. extensive pre-analysis and image filtering can be done. However, images are typically pre-screened to avoid very uneven background, as the quantification not very reliable. Ideally, modify acquision settings to avoid uneven background, or ensure the background is regular across all images.
-  b. many microscopes have different focal planes depending on the fluorescent channel imaged. Use autofocus or refocus on each channel manually. 
+1. extensive pre-analysis and image filtering can be done. However, images are typically pre-screened to avoid very uneven background, as the quantification not very reliable. Ideally, modify acquision settings to avoid uneven background, or ensure the background is regular across all images.
+2. many microscopes have different focal planes depending on the fluorescent channel imaged. Use autofocus or refocus on each channel manually. 
   
 Output files required for quantification: Select measurments to export 
 1. All/Image/FileName/Ch00 (or any other channel) = "MyExpt_Image.txt"
 2. All/Nuclei/Intensity/MeanIntensity/(all channels of interest) = "MyExpt_Nuclei.txt"
   
 ## 2.  ROC curves for fluorescence imaging
-So, I use a simple version of ROC curves in order to determine the automatic theshold for immonofluorescent images. This allows me to quantify across conditions and experiments the percentage of positive cells in a given channel (=immunostaining) to determine if a particular treatment has an effect or not.
+I use a simple version of ROC curves in order to determine the automatic theshold for immonofluorescent images. This allows me to quantify across conditions and experiments the percentage of positive cells in a given channel (=immunostaining) to determine if a particular treatment has an effect or not.
 
 ### Data formating
 File: "1. Import files.R"
