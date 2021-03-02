@@ -7,8 +7,9 @@ The exact parameters used to segment images for further quantification vary ever
 2. Lower and upper bounds on threshold = 0.003, 1 [ to set the lower bound, enter test mode and use cursor to explore pixel intensities around nuclei.]
 
 Tips for accurate quantification across experiments:
-1. extensive pre-analysis and image filtering can be done. However, images are typically pre-screened to avoid very uneven background, as the quantification not very reliable. Ideally, modify acquision settings to avoid uneven background, or ensure the background is regular across all images.
-2. many microscopes have different focal planes depending on the fluorescent channel imaged. Use autofocus or refocus on each channel manually. 
+1. Extensive pre-analysis and image filtering can be done. However, images are typically pre-screened to avoid very uneven background, as the quantification is not very accurate in those cases. Ideally, modify acquision settings to avoid uneven background, or ensure the background is regular across all images.
+2. Many microscopes have different focal planes depending on the fluorescent channel imaged. Use autofocus or refocus on each channel manually. 
+3. Ensure the channel is not saturated and adjust imaging parameters to obtain a good dynamic range (ideally 12bit +).
   
 Output files required for quantification: Select measurments to export 
 1. All/Image/FileName/Ch00 (or any other channel) = "MyExpt_Image.txt"
@@ -56,7 +57,7 @@ You will generate an ROC table (saved as "ROC table for [channel]") and a thresh
 ![ROC output](https://user-images.githubusercontent.com/61800079/109636458-850a4480-7b43-11eb-9d04-4b160cfdb80b.png)
 
 
-Most of the rest of the code is about diagnostic plots to make sure the analysis worked and that the threshold makes sense.
+The rest of the code generates diagnostic plots to make sure the the threshold makes sense.
 ![Threshold values](https://user-images.githubusercontent.com/61800079/109636542-9d7a5f00-7b43-11eb-93a2-9f9f97d51b72.png)
 
 ## 3. Analysis of percentage of positive cells across conditions
