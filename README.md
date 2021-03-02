@@ -14,7 +14,7 @@ Output files required for quantification: Select measurments to export
 1. All/Image/FileName/Ch00 (or any other channel) = "MyExpt_Image.txt"
 2. All/Nuclei/Intensity/MeanIntensity/(all channels of interest) = "MyExpt_Nuclei.txt"
   
-## 2.  ROC curves for fluorescence imaging
+## 2.  Use ROC curves to calculate threshold.
 I use a simple version of ROC curves in order to determine the automatic theshold for immonofluorescent images. This allows me to quantify across conditions and experiments the percentage of positive cells in a given channel (=immunostaining) to determine if a particular treatment has an effect or not.
 
 ### Data formating
@@ -59,5 +59,5 @@ You will generate an ROC table (saved as "ROC table for [channel]") and a thresh
 Most of the rest of the code is about diagnostic plots to make sure the analysis worked and that the threshold makes sense.
 ![Threshold values](https://user-images.githubusercontent.com/61800079/109636542-9d7a5f00-7b43-11eb-93a2-9f9f97d51b72.png)
 
-## Analysis 
-File "3. Analysis percentages.R" allows quantification of percentages of positive cells, to compare across experiments, calculate statistics, etc.
+## 3. Analysis of percentage of positive cells across conditions
+File "3. Analysis percentages.R" allows quantification of percentages of positive cells, to compare across experiments, calculate statistics, etc. Can merge multiple replicates at this stage.
