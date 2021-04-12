@@ -2,6 +2,7 @@
 Pipelines to quantify and analysed immunofluorescence images
 
 ## 1. Segment and quantify fluorescent images with CellProfiler
+Approach: identify primary objects on DAPI channel, then measure object intensity across all channels. 
 The exact parameters used to segment images for further quantification vary every time. However, I have uploaded a test pipelines for 10x images and quantification of nuclear signal. Adaptive Otsu thresolding worked better in my hands. The following parameters are particularly important:
 1. Typical diameter of objects, in pixel units (Min, Max) = 12, 30 [small variations can affect nuclei merging/splitting]
 2. Lower and upper bounds on threshold = 0.003, 1 [ to set the lower bound, enter test mode and use cursor to explore pixel intensities around nuclei.]
